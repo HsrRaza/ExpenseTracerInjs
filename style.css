@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans;
+}
+
+html, body{
+    height: 100vh;
+    width: 100vw;
+}
+
+#main{
+    height: 100vh;
+    width: 100vw;
+    /* background-color: red; */
+    padding: 2vw 0vw;
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    align-items: center;
+}
+#main h1{
+    width: 82vw;
+    margin: 0vw 1vw;
+    margin-bottom: 25px;
+    background-color: blue;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.897);
+    color: #fff;
+    text-align: center;
+}
+
+#xcontainer{
+    width: 90vw;
+     height:18vh ;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     /* background-color: rgba(0, 0, 0, 0.577); */
+     margin-bottom: 10px;
+    
+
+}
+
+
+.elem{
+    height: 70%;
+    width: 33%;
+    margin: 0vw 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.897);
+}
+.elem h3{
+    font-size: 25px;
+    font-family: serif;
+    font-weight: 700;
+    color: #fff;
+}
+.elem h4{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+#inputBox{
+    width: 82vw;
+    height: 7vh;
+    border-radius: 10px;
+    background-color: black;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+
+
+}
+#inputBox  .btn{
+   
+     margin-left: 10px;
+     padding: 8px 12px;
+     border-radius: 10px;
+     border: none;
+     background-color: rgb(217, 88, 88);
+     color: wheat;
+     outline: none;
+}
+#inputBox select{
+    margin: 0vw 2vw;
+    padding: 7px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+#inputBox select option{
+    border-radius: 10px;
+}
+#inputBox input[type = "number"]:focus{
+    /* border: none; */
+    outline: none;
+}
+#inputBox input{
+    padding: 7px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+}
+#inputBox label{
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 15px;
+}
+#box{
+    width: 82vw;
+    height: auto;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-bottom: 10px; */
+   
+}
+.data{
+    width: 60%;
+    height: auto;
+    margin: 10px 0px;
+    /* margin-bottom: 10px; */
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(19, 57, 19);
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+.data button{
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.856);
+    color: #fff;
+}
+.expense{
+    width: 60%;
+    height: auto;
+    margin: 10px 0px;
+    /* margin-bottom: 10px; */
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 128, 0, 0.736);
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+#box h3{
+    color: #fff;
+}
+
+
+
+   
+
+
+
