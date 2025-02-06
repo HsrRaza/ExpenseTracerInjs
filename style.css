@@ -135,7 +135,7 @@ html, body{
     /* margin-bottom: 10px; */
     display: flex;
     justify-content: space-between;
-    background-color: rgb(19, 57, 19);
+    background-color: rgb(33, 24, 37);
     border-radius: 10px;
     padding: 5px 10px;
 }
@@ -153,7 +153,7 @@ html, body{
     /* margin-bottom: 10px; */
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0, 128, 0, 0.736);
+    background-color: rgb(33, 24, 37);
     border-radius: 10px;
     padding: 5px 10px;
 }
