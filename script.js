@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let Totalamount = parseFloat(0);
     let expenses = parseFloat(0);
+    let balance = parseFloat(0);
     let store = [];
 
 
@@ -42,20 +43,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function getData() {
         const amount = parseFloat(inputValueExpense.value);
 
-        // const category = categorySelect.value;
+        
         if (isNaN(amount) || amount <= 0 || inputValueExpense.value.trim() === '') {
             alert("enter valid amount");
             return;
         }
 
-        // store.push({ amount, categorySelect });
-
-        Totalamount += amount;
-        // console.log(Totalamount);
-
-
-        incomeUpdate.textContent = Totalamount;
-        balanceUpdate.textContent = Totalamount;
+    
 
         inputValueExpense.value = '';  
 
@@ -63,19 +57,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const h3One = document.createElement('h3');
         const h3Two = document.createElement('h3');
         const btnDel = document.createElement('button')
+        container.classList.add('data');
 
 
-        //    const  category  = categorySelect.options;
-         
-        if(categorySelect.value === 'expense'){
-            expenses+=amount;
-             expenseUpdate.textContent= expenses;
-             Totalamount-=expenses;
-             balanceUpdate.textContent = Totalamount;
-        }
-
+      
         if (categorySelect.value === 'income') {
             // console.log(categorySelect.value);
+            Totalamount+=amount;
+            balance+=amount;
+            incomeUpdate.textContent = Totalamount;
+            balanceUpdate.textContent=balance;
+
 
 
             h3Two.textContent = `$${amount.toFixed(2)}`;
@@ -85,12 +77,30 @@ document.addEventListener('DOMContentLoaded', function () {
             container.appendChild(h3One);
             container.appendChild(h3Two);
             container.appendChild(btnDel)
-            container.classList.add('data');
             dataTostored.appendChild(container);
+
+            btnDel.addEventListener('click', function(){
+                Totalamount-=amount;
+                balance-=amount;
+                incomeUpdate.textContent = `$${Totalamount.toFixed(2)}`;
+                balanceUpdate.textContent = `$${balance.toFixed(2)}`;
+                container.remove();
+                
+                
+                
+           })
+            
+            
+            
+            
         } else if(categorySelect.value === 'expense'){
             
             //  expenses-=amount;
-             
+            expenses+=amount;
+            expenseUpdate.textContent= `$${expenses.toFixed(2)}`;
+            // Totalamount-=expenses;
+            balance-=amount;
+            balanceUpdate.textContent = `$${balance.toFixed(2)}`;
 
 
             h3Two.textContent = `$${amount.toFixed(2)}`;
@@ -100,9 +110,22 @@ document.addEventListener('DOMContentLoaded', function () {
             container.appendChild(h3One);
             container.appendChild(h3Two);
             container.appendChild(btnDel)
-            container.classList.add('data');
             dataTostored.appendChild(container);
+
+            btnDel.addEventListener('click', function(){
+                expenses-=amount;
+                balance+=amount;
+                incomeUpdate.textContent = `$${expenses.toFixed(2)}`;
+                balanceUpdate.textContent = `$${balance.toFixed(2)}`;
+               
+                container.remove();
+                
+                
+                
+           })
         }
+
+       
 
 
 
@@ -116,14 +139,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // console.log(Totalamount);
         incomeUpdate.textContent = Totalamount;
         balanceUpdate.textContent = Totalamount;
+        expenseUpdate.textContent = Totalamount;
 
-        // h3One.textContent ='';
-        // h3Two.textContent ='';
-        // btnDel.textContent= '';
-        // container.removeChild(h3One);
-        // container.removeChild(h3Two)
-        // container.removeChild(btnDel)
-        // container.classList.remove('data');
+        
         dataTostored.remove(container)
 
 
